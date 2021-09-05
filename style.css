@@ -1,0 +1,182 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126  License: none (public domain)*/html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {  margin: 0;  padding: 0;  border: 0;  font-size: 100%;  font: inherit;  vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {  display: block;}body {  line-height: 1;}ol, ul {  list-style: none;}blockquote, q {  quotes: none;}blockquote:before, blockquote:after,q:before, q:after {  content: '';  content: none;}table {  border-collapse: collapse;  border-spacing: 0;}
+
+:root {
+    --color-gray: #BFB99B; 
+    --color-white: #F2F2F2;
+    --color-yellow: #F2E18D;
+    --color-red: #D95F69;
+    --color-orange: #F29544;
+    --color-alertyellow: #f5d63d;
+    --color-alertred: #f83848;
+}
+
+body {
+    min-width: 300px;
+    background-color: var(--color-white);
+}
+
+h1 {
+    margin: 20px auto;
+    width: 320px;
+    font-size: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray);
+    width: 90vw;
+    margin:auto;
+}
+
+/* 
+    NEW BOOK SECTION
+*/
+#new-book {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+}
+
+#new-book-btn {
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+#new-book-btn:hover {
+    color: var(--color-white);
+}
+
+#new-book-form {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#new-book-form label {
+    margin: 20px 0 0 0 ;
+}
+
+#new-book-form input{
+   height: 30px;
+   width: 300px;
+   border-radius: 5px;
+   background-color: var(--color-white);
+}
+
+#new-book-form select{
+   height: 30px;
+   margin: 0 0 0 30px;
+   border-radius: 5px;
+   background-color: var(--color-white);
+}
+
+#new-book-form #submit-btn {
+    margin: 30px 0 0 0 ;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+#new-book-form #submit-btn:hover {
+    color: var(--color-white);
+}
+
+/* 
+    BOOK DISPLAY SECTION
+*/
+
+#book-display {
+    height: 80vh;
+    overflow-y: scroll;
+    width: 60vw;
+    padding: 10px;
+}
+
+#book-display > * {
+    border-bottom: 4px dashed var(--color-white); 
+    padding: 10px;
+    display: flex;
+}
+
+#book-display p {
+    flex-grow: 1;
+    width: 40vw;
+    word-break: break-all;
+}  
+
+#book-display .book-btns-container {
+    display: flex;
+    min-width: 70px;
+    flex-direction: column;
+    width: 10vw;
+}
+
+#book-display .book-btns-container .book-btns {
+   margin: 1px;
+   border: 2px outset;
+   border-radius: 8px;
+}
+
+#book-display .book-btns-container .remove-btns {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+#book-display .book-btns-container .markAs-btns {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow);
+}
+
+#book-display .book-btns-container .remove-btns:hover {
+    font-weight: 900;
+    background-color: var(--color-alertred);
+    border-color: var(--color-alertred);
+    border-style: inset;
+    color: var(--color-white);
+}
+
+#book-display .book-btns-container .markAs-btns:hover {
+    font-weight: 900;
+    background-color: var(--color-alertyellow);
+    border-color: var(--color-alertyellow);
+    border-style: inset;
+    color: var(--color-white);
+}
+
+
+@media only screen and (max-width:750px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #book-display {
+        width: 90vw;
+        overflow-y: auto;
+    }
+
+    #book-display > * {
+        flex-direction: column;
+    }
+    #book-display p {
+        width: 80vw;
+    }  
+    #book-display .book-btns-container {
+        min-width: 250px;
+        flex-direction: row;
+        margin: 5px 0 0 0;
+    }
+
+    #new-book {
+        margin: 10px 0px 20px 0px;
+    }
+}
