@@ -1,20 +1,22 @@
 let myLibrary = [];
 
 // book class
-function Book(title, author, pages, haveRead, uniqueId) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead; // true or false
-    this.uniqueId = uniqueId;
+class Book {
+    constructor(title, author, pages, haveRead, uniqueId) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead; // true or false
+        this.uniqueId = uniqueId;
+    }
+    info() {
+        return `${this.title} 
+        author: ${this.author} 
+        pages: ${this.pages}
+        ${this.haveRead ? 'already read' : 'not read yet'}.`;
+    }
 }
 
-Book.prototype.info = function() {
-    return `${this.title} 
-    author: ${this.author} 
-    pages: ${this.pages}
-    ${this.haveRead ? 'already read' : 'not read yet'}.`;
-}
 
 let booksAddedCounter = -1; //used to give unique id to a book
 function addBookToLibrary(title, author, pages, haveRead) {
